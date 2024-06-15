@@ -1,12 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Global CSS */
-/* Keep this file for helpful built-in styles */
-
-/* Reset */
 
 body,
 html,
@@ -17,6 +11,3 @@ html,
     overflow-y: hidden;
 }
 
-.dark {
-    border-color: var(--framer-color-divider);
-}
