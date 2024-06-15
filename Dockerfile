@@ -23,7 +23,7 @@ RUN npm install -g @remix-run/serve
 
 COPY ./build /app/build
 
-env PORT=3467
+env PORT=4334
 
 EXPOSE $PORT
 
