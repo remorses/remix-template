@@ -4,9 +4,11 @@
     "sideEffects": false,
     "type": "module",
     "scripts": {
-        "build": "tsc && remix vite:build",
-        "dev": "remix vite:dev -p 4334",
-        "start": "PORT=4334 remix-serve ./build/server/index.js"
+        "build": "doppler run -- remix vite:build && pnpm copy-prisma",
+        "copy-prisma": "# cp ../db/schema.prisma ./build/ && doppler run -- pnpm prisma generate --schema build/schema.prisma",
+        "test": "doppler run -- vitest",
+        "dev": "doppler run -- remix vite:dev -p 4334",
+        "start": "doppler run -- PORT=4334 remix-serve ./build/server/index.js"
     },
     "dependencies": {
         "@nextui-org/react": "2.4.2",

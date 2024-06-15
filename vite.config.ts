@@ -11,6 +11,7 @@ export default defineConfig({
 
         remix({
             appDirectory: 'src',
+
             future: {
                 v3_fetcherPersist: true,
                 v3_relativeSplatPath: true,
@@ -19,8 +20,23 @@ export default defineConfig({
         }),
         tsconfigPaths(),
     ],
+    define: Object.assign(
+        {},
+        Object.fromEntries(
+            Object.entries(process.env)
+                .filter(
+                    ([key, v]) =>
+                        key.includes('PUBLIC_') && typeof v === 'string',
+                )
+                .map(([key, value]) => [
+                    `process.env.${key}`,
+                    JSON.stringify(value),
+                ]),
+        ),
+    ),
     ssr: {
         noExternal: building || undefined,
+        external: building ? ['@prisma/client'] : undefined,
     },
     legacy: {
         proxySsrExternalModules: true,
