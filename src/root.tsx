@@ -1,4 +1,5 @@
 import './styles/globals.css'
+import { Toaster } from 'react-hot-toast'
 import {
     Links,
     Meta,
@@ -12,6 +13,7 @@ import { NextUIProvider } from '@nextui-org/react'
 function Providers({ children }) {
     return (
         <div className='dark h-full w-full flex flex-col bg-framer-primary text-framer-primary'>
+            <Toaster />
             <NextUIProvider className='h-full flex flex-col '>
                 {children}
             </NextUIProvider>
