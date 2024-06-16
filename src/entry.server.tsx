@@ -155,5 +155,5 @@ export function handleError(
     ) {
         return
     }
-    console.error(error, 'unhandled remix error')
+    notifyerror(error, 'unhandled remix error')
 }
