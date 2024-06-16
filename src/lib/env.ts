@@ -9,7 +9,7 @@ export const env = {
 
 // for (let k in env) {
 //     if (
-//         env[k] != null &&
+//         env[k] == null &&
 //         (typeof window === 'undefined' || k.includes('PUBLIC'))
 //     ) {
 //         throw new Error(`Missing env var ${k}`)
