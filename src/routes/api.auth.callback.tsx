@@ -2,9 +2,9 @@ import { redirect, type LoaderFunctionArgs } from '@remix-run/node'
 import { getSupabaseWithHeaders } from '../lib/supabase.server'
 
 export async function loader({ request }: LoaderFunctionArgs) {
-    const requestUrl = new URL(request.url)
-    const code = requestUrl.searchParams.get('code')
-    const next = requestUrl.searchParams.get('next') || '/world'
+    const url = new URL(request.url)
+    const code = url.searchParams.get('code')
+    const next = url.searchParams.get('next') || '/x'
 
     if (code) {
         const { headers, supabase } = getSupabaseWithHeaders({
