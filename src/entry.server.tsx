@@ -16,7 +16,10 @@ import { createReadableStreamFromReadable } from '@remix-run/node'
 import { RemixServer } from '@remix-run/react'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
+<<<<<<< HEAD
 import { notifyError } from './lib/errors'
+=======
+>>>>>>> 942ee2f (add 404 handler for remix)
 
 const ABORT_DELAY = 5_000
 
