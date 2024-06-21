@@ -16,6 +16,7 @@ import { createReadableStreamFromReadable } from '@remix-run/node'
 import { RemixServer } from '@remix-run/react'
 import { isbot } from 'isbot'
 import { renderToPipeableStream } from 'react-dom/server'
+import { notifyError } from './lib/errors'
 
 const ABORT_DELAY = 5_000
 
@@ -155,5 +156,5 @@ export function handleError(
     ) {
         return
     }
-    notifyerror(error, 'unhandled remix error')
+    notifyError(error, 'unhandled remix error')
 }
