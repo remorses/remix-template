@@ -7,6 +7,8 @@
         "build": "doppler run -- remix vite:build && pnpm copy-prisma",
         "copy-prisma": "# cp ../db/schema.prisma ./build/ && doppler run -- pnpm prisma generate --schema build/schema.prisma",
         "test": "doppler run -- vitest",
+        "fly": "fly --app 4334",
+        "deployment": "pnpm tsx scripts/deployment.tsx",
         "dev": "doppler run -- remix vite:dev -p 4334",
         "start": "PORT=4334 doppler run -- remix-serve ./build/server/index.js"
     },
