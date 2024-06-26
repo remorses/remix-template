@@ -30,4 +30,9 @@ export default defineConfig({
     legacy: {
         proxySsrExternalModules: true,
     },
+    build: {
+        commonjsOptions: {
+            transformMixedEsModules: true,
+        },
+    },
 })
