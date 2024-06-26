@@ -7,6 +7,7 @@ import EnvironmentPlugin from 'vite-plugin-environment'
 const building = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
+    clearScreen: false,
     plugins: [
         Inspect(),
 
