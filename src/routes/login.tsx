@@ -3,10 +3,12 @@ import { toast } from 'react-hot-toast'
 
 import { json, redirect } from '@remix-run/node'
 import { useOutletContext, useSearchParams } from '@remix-run/react'
-import { getSupabaseSession } from '../lib/supabase.server'
 import { Button } from '@nextui-org/react'
-import { env } from '../lib/env'
-import { supabase } from '../lib/supabase.client'
+import { env } from 'process'
+import { supabase } from 'website/src/lib/supabase.client'
+import { getSupabaseSession } from 'website/src/lib/supabase.server'
+
+
 
 export let loader = async ({ request }: LoaderFunctionArgs) => {
     const { headers, session } = await getSupabaseSession({

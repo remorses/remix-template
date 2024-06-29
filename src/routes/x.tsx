@@ -2,7 +2,8 @@ import type { LoaderFunctionArgs } from '@remix-run/node'
 
 import { json } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
-import { getSupabaseSession } from '../lib/supabase.server'
+import { getSupabaseSession } from 'website/src/lib/supabase.server'
+
 
 export let loader = async ({ request }: LoaderFunctionArgs) => {
     const { headers, user, redirectTo } = await getSupabaseSession({

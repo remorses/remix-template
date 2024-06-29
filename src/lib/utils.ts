@@ -1,4 +1,5 @@
-import { env } from './env'
+import { env } from "website/src/lib/env"
+
 
 export function loginRedirectUrl({ next = '' }) {
     const u = new URL('/api/auth/callback', env.PUBLIC_URL)

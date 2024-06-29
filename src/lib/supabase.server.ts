@@ -1,8 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
 import { redirect } from '@remix-run/node'
 import { createServerClient, parse, serialize } from '@supabase/ssr'
+import { env } from 'website/src/lib/env'
 
-import { env } from './env'
+
 
 export function createSupabaseAdmin() {
     return createClient<any>(
